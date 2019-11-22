@@ -1,0 +1,45 @@
+apply plugin :'java'
+apply plugin :'scala'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+group 'usky'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.4'
+    }
+}
+
+
+
+repositories {
+    mavenCentral()
+}
+
+shadowJar {
+    baseName = 'template-maker'
+    classifier = null
+    version = null
+    manifest {
+        attributes(
+                'Main-Class': 'ExcelReader'
+        )
+    }
+    configurations = [project.configurations.compile]
+//    dependencies {
+//        include(dependency('com.alibaba:easyexcel:2.1.3'))
+//    }
+}
+dependencies {
+    compile 'com.alibaba:easyexcel:2.1.3'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+
+

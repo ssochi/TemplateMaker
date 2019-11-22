@@ -1,0 +1,1 @@
+java -jar template-maker.jar template/ data/ excel/
