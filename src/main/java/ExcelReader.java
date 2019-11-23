@@ -165,7 +165,7 @@ public class ExcelReader {
         tab += TAB;
 
         for (String className : classNames) {
-            sb.append(tab).append(className).append(".Load(path);\n");
+            sb.append(tab).append(className).append(String.format(".Load(path + \"%s\");\n",className));
         }
         tab = tab.substring(0,tab.length() - 4);
         sb.append(tab).append("}\n");

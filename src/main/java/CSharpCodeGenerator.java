@@ -44,7 +44,7 @@ public class CSharpCodeGenerator {
         tab += TAB;
 
         sb.append(tab).append("var line = \"\";\n");
-        sb.append(tab).append("using var sr = new StreamReader(path);\n");
+        sb.append(tab).append("var sr = new StreamReader(path);\n");
         sb.append(tab).append("while ((line = sr.ReadLine()) != null){\n");
         tab += TAB;
         sb.append(tab).append("var data = line.Split('|');\n");
